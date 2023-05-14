@@ -11,6 +11,9 @@ exec &> rebasingPractice/logFile.tmp
 
 cd rebasingPractice
 git init .
+
+MAIN_BRANCH=$(git branch --show-current)
+
 touch groceryList.txt, partySupplies.txt, guestList.txt
 echo -e "Bread\nBagels\nPasta" >> groceryList.txt
 git add groceryList.txt
@@ -56,9 +59,9 @@ git checkout -b rebasingWithReordering
 echo "Ice cream" >> groceryList.txt
 git add groceryList.txt
 git commit -m "Add ice cream"
-echo "Wine" >> groceryList.txt
+echo "Orange juice" >> groceryList.txt
 git add groceryList.txt
-git commit -m "Add wine"
+git commit -m "Add oj"
 echo "Salty crackers" >> groceryList.txt
 git add groceryList.txt
 git commit -m "Add salty crackers"
@@ -107,7 +110,7 @@ git add groceryList.txt
 git commit -m "Add apples"
 echo "Beer" >> groceryList.txt
 git add groceryList.txt
-git commit -m "Add beer"
+git commit -m "Add soda"
 echo "Oranges" >> groceryList.txt
 git add groceryList.txt
 git commit -m "Add oranges"
@@ -118,3 +121,4 @@ git reset --soft HEAD~2
 git add groceryList.txt
 git commit -m "Add fruit salad ingredients"
 
+git checkout $MAIN_BRANCH
